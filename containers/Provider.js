@@ -6,18 +6,16 @@ import { Provider as ReduxProvider } from 'react-redux'
 
 import Root from './Root'
 import * as reducers from '../reducers'
+import remoteMW from '../remotes'
 
 const reducer = combineReducers(reducers)
 const finalCreateStore = compose(
-  applyMiddleware(logger({collapsed: true})),
+  applyMiddleware(remoteMW, logger({collapsed: true})),
   autoRehydrate(),
   createStore
 )
 const store = finalCreateStore(reducer)
 window.store = store
-
-// import {createGeometer} from 'geometer'
-// const geometer = createGeometer(db, {precision: 32})
 
 export default class Provider extends Component {
   state={initialized: false}
