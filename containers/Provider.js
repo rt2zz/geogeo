@@ -16,6 +16,9 @@ const finalCreateStore = compose(
 const store = finalCreateStore(reducer)
 window.store = store
 
+// import {createGeometer} from 'geometer'
+// const geometer = createGeometer(db, {precision: 32})
+
 export default class Provider extends Component {
   state={initialized: false}
 

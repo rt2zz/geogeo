@@ -5,7 +5,9 @@ export default class TestPage extends Component {
   render() {
     return (
       <div>
-        Hi Test Page
+        abasd
+        <input type="text" placeholder="lat" />
+        <input type="text" placeholder="lon" />
       </div>
     )
   }
